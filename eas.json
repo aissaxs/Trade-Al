@@ -1,6 +1,6 @@
-echo '{
+{
   "cli": {
-    "version": ">= 5.0.0"
+    "version": ">= 7.0.0"
   },
   "build": {
     "development": {
@@ -8,11 +8,18 @@ echo '{
       "distribution": "internal"
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
     },
-    "production": {}
+    "production": {
+      "android": {
+        "buildType": "app-bundle"
+      }
+    }
   },
   "submit": {
     "production": {}
   }
-}' > eas.json
+}
