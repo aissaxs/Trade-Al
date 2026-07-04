@@ -126,4 +126,180 @@ export default function FavoritesScreen() {
             onChangeText={setSearchQuery}
           />
           {searchQuery.length > 0 && (
-            <TouchableOpacity onPress
+            <TouchableOpacity onPress={() => setSearchQuery('')}>
+              <Ionicons name="close-circle" size={18} color={theme.colors.textMuted} />
+            </TouchableOpacity>
+          )}
+        </View>
+      </View>
+
+      {/* Filter Tabs */}
+      <View style={styles.filterContainer}>
+        {[
+          { key: 'all' as const, label: 'الكل' },
+          { key: 'crypto' as const, label: 'عملات رقمية' },
+          { key: 'stock' as const, label: 'أسهم' },
+          { key: 'forex' as const, label: 'فوركس' },
+        ].map((filter) => (
+          <TouchableOpacity
+            key={filter.key}
+            style={[
+              styles.filterTab,
+              activeFilter === filter.key && {
+                backgroundColor: COLORS.primary + '20',
+                borderColor: COLORS.primary,
+              },
+            ]}
+            onPress={() => setActiveFilter(filter.key)}
+          >
+            <Text
+              style={[
+                styles.filterText,
+                { color: activeFilter === filter.key ? COLORS.primary : theme.colors.textMuted },
+              ]}
+            >
+              {filter.label}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+
+      {/* Favorites List */}
+      <FlatList
+        data={filteredFavorites}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={styles.favoritesList}
+        showsVerticalScrollIndicator={false}
+        ListEmptyComponent={
+          <View style={styles.emptyContainer}>
+            <Ionicons name="star-outline" size={64} color={theme.colors.textMuted + '40'} />
+            <Text style={[styles.emptyText, { color: theme.colors.textSecondary }]}>
+              لا توجد عناصر في المفضلة
+            </Text>
+          </View>
+        }
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingTop: 50,
+    paddingBottom: 16,
+  },
+  backButton: {
+    padding: 8,
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  addButton: {
+    padding: 8,
+  },
+  searchContainer: {
+    paddingHorizontal: 16,
+    marginBottom: 12,
+  },
+  searchInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    height: 48,
+    gap: 10,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 14,
+    textAlign: 'right',
+  },
+  filterContainer: {
+    flexDirection: 'row',
+    paddingHorizontal: 16,
+    paddingBottom: 12,
+    gap: 8,
+  },
+  filterTab: {
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: 'transparent',
+  },
+  filterText: {
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  favoritesList: {
+    padding: 16,
+    paddingBottom: 100,
+    gap: 10,
+  },
+  favoriteCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 14,
+    borderRadius: 12,
+  },
+  itemLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+  },
+  typeIconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 12,
+  },
+  symbolText: {
+    fontSize: 15,
+    fontWeight: 'bold',
+  },
+  nameText: {
+    fontSize: 12,
+    marginTop: 2,
+  },
+  itemRight: {
+    alignItems: 'flex-end',
+    marginRight: 12,
+  },
+  priceText: {
+    fontSize: 15,
+    fontWeight: '600',
+    marginBottom: 4,
+  },
+  changeBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+  },
+  changeText: {
+    fontSize: 11,
+    fontWeight: 'bold',
+  },
+  removeButton: {
+    padding: 4,
+  },
+  emptyContainer: {
+    alignItems: 'center',
+    paddingTop: 100,
+  },
+  emptyText: {
+    marginTop: 16,
+    fontSize: 14,
+  },
+});
