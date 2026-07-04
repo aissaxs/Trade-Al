@@ -6,6 +6,7 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../../utils/constants';
 import { useTheme } from '../../context/ThemeContext';
 
@@ -86,9 +87,6 @@ export default function PriceTicker() {
     </View>
   );
 }
-
-// Need to import Ionicons
-import { Ionicons } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   container: {
