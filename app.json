@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "TradeAI Pro",
-    "slug": "tradeai-pro",
+    "slug": "trade-al-qst-dc7spkctbl4hrjpz",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/images/logo.png",
@@ -23,7 +23,10 @@
         "foregroundImage": "./src/assets/images/logo.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.tradeai.pro"
+      "package": "com.tradeai.pro",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./src/assets/images/logo.png",
@@ -32,13 +35,14 @@
     "plugins": [
       "expo-secure-store",
       "expo-notifications",
-      "expo-image-picker"
+      "expo-image-picker",
+      "expo-localization"
     ],
     "extra": {
       "eas": {
         "projectId": "b0f101c3-57fc-4aab-90c5-fcb8ab7e6a9a"
-
       }
-    }
+    },
+    "owner": "aissaxs"
   }
 }
