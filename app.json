@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "TradeAI Pro",
+    "slug": "tradeai-pro",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/images/logo.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./src/assets/images/splash-bull.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tradeai.pro"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/images/logo.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.tradeai.pro"
+    },
+    "web": {
+      "favicon": "./src/assets/images/logo.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-notifications",
+      "expo-image-picker"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "b0f101c3-57fc-4aab-90c5-fcb8ab7e6a9a"
+
+      }
+    }
+  }
+}

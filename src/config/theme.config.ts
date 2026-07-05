@@ -1,0 +1,83 @@
+export const lightTheme = {
+  colors: {
+    background: '#FFFFFF',
+    surface: '#F5F5F5',
+    surfaceLight: '#EEEEEE',
+    text: '#1A1A1A',
+    textSecondary: '#666666',
+    textMuted: '#999999',
+    primary: '#00C853',
+    primaryDark: '#009624',
+    secondary: '#00BFA5',
+    accent: '#64DD17',
+    success: '#00C853',
+    danger: '#FF1744',
+    warning: '#FFD600',
+    info: '#00B0FF',
+    border: '#E0E0E0',
+    divider: '#F0F0F0',
+    chartUp: '#26A69A',
+    chartDown: '#EF5350',
+  },
+  fonts: {
+    regular: 'Inter-Regular',
+    bold: 'Inter-Bold',
+  },
+  spacing: {
+    xs: 4,
+    sm: 8,
+    md: 16,
+    lg: 24,
+    xl: 32,
+  },
+  borderRadius: {
+    sm: 4,
+    md: 8,
+    lg: 12,
+    xl: 16,
+    full: 9999,
+  },
+};
+
+export const darkTheme = {
+  colors: {
+    background: '#0A0A0A',
+    surface: '#1A1A1A',
+    surfaceLight: '#2A2A2A',
+    text: '#FFFFFF',
+    textSecondary: '#B0B0B0',
+    textMuted: '#707070',
+    primary: '#00C853',
+    primaryDark: '#009624',
+    secondary: '#00BFA5',
+    accent: '#64DD17',
+    success: '#00C853',
+    danger: '#FF1744',
+    warning: '#FFD600',
+    info: '#00B0FF',
+    border: '#2A2A2A',
+    divider: '#1A1A1A',
+    chartUp: '#26A69A',
+    chartDown: '#EF5350',
+  },
+  fonts: {
+    regular: 'Inter-Regular',
+    bold: 'Inter-Bold',
+  },
+  spacing: {
+    xs: 4,
+    sm: 8,
+    md: 16,
+    lg: 24,
+    xl: 32,
+  },
+  borderRadius: {
+    sm: 4,
+    md: 8,
+    lg: 12,
+    xl: 16,
+    full: 9999,
+  },
+};
+
+export type Theme = typeof darkTheme;
